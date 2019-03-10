@@ -1,5 +1,5 @@
 # sketch2pdf
-Bash script to automate the Sketch -> TikZ -> PDF workflow.
+Bash script to automate the [Sketch](http://sketch4latex.sourceforge.net/) -> TikZ -> PDF workflow.
 
 Assumes use of XeLaTeX and TikZ.
 
