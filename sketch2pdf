@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SOURCE_FILE=`realpath $1`
+SOURCE_FILE_NAME=`basename $1`
+SOURCE_FILE_NAME_WO_EXT=${SOURCE_FILE_NAME%%.*}
+DESTINATION_WO_EXT=${SOURCE_FILE%.*}
+DESTINATION_PATH=${DESTINATION_WO_EXT%/*}
+
+sketch $SOURCE_FILE -t ~/.config/sketch2pdf/template.tex -o $DESTINATION_WO_EXT.tex
+xelatex -output-directory=$DESTINATION_PATH $DESTINATION_WO_EXT.tex  &>/dev/null
+rm $DESTINATION_WO_EXT.out $DESTINATION_WO_EXT.sta $DESTINATION_WO_EXT.log $DESTINATION_WO_EXT.aux &>/dev/null
